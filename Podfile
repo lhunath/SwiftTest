@@ -6,4 +6,5 @@ target 'SwiftTest' do
   use_frameworks!
 
   # Pods for SwiftTest
+  pod 'AlignedCollectionViewFlowLayout'
 end

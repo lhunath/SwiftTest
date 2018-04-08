@@ -7,9 +7,16 @@
 //
 
 import UIKit
+import AlignedCollectionViewFlowLayout
 
 class ViewController: UIViewController {
+    var collectionView: UICollectionView!
+
     override func loadView() {
         super.loadView()
+
+        self.collectionView = UICollectionView(
+                frame: self.view.frame, collectionViewLayout: AlignedCollectionViewFlowLayout() )
+        self.view.addSubview( self.collectionView )
     }
 }
