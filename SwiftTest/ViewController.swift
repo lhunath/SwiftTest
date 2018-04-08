@@ -8,17 +8,17 @@
 
 import UIKit
 
-class SwiftyViewController {
-    init(view: UIView, configurations: (SwiftyViewController, SwiftyViewController) -> Void) {
+class SwiftyViewConfiguration {
+    init(view: UIView, configurations: (SwiftyViewConfiguration, SwiftyViewConfiguration) -> Void) {
     }
 
     @discardableResult
-    func add(_: (UIView, UIView) -> NSLayoutConstraint) -> SwiftyViewController {
+    func add(_: (UIView, UIView) -> NSLayoutConstraint) -> SwiftyViewConfiguration {
         return self
     }
 
     @discardableResult
-    func activate() -> SwiftyViewController {
+    func activate() -> SwiftyViewConfiguration {
         return self
     }
 }
@@ -37,7 +37,7 @@ class ViewController: UIViewController {
         }.activate()
 
         // All of these work fine here.
-        SwiftyViewController( view: self.view ) { active, inactive in
+        SwiftyViewConfiguration( view: self.view ) { active, inactive in
             active.add {
                 $0.topAnchor.constraint( equalTo: $1.topAnchor )
             }
