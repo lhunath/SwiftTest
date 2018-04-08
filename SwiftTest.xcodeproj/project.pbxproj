@@ -13,6 +13,7 @@
 		93D39640DCC520190989FC37 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93D390A7C104148EB38F307C /* Main.storyboard */; };
 		93D396C817B4F5ECFC6A5AF8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D39EEBC1EB7B548A3AABA2 /* ViewController.swift */; };
 		93D39C248F2174A83ECA22B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D39736D88AD08896E7FABB /* AppDelegate.swift */; };
+		DAE0BA98207A559B0093EDDD /* ViewConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE0BA97207A559B0093EDDD /* ViewConfiguration.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,9 @@
 		93D39CC02746D22734907283 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		93D39EEBC1EB7B548A3AABA2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		93D39EFB4EC98D4CD693E6FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DAE0BA95207A559A0093EDDD /* SwiftTest-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwiftTest-Bridging-Header.h"; sourceTree = "<group>"; };
+		DAE0BA96207A559A0093EDDD /* ViewConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewConfiguration.h; sourceTree = "<group>"; };
+		DAE0BA97207A559B0093EDDD /* ViewConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewConfiguration.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,12 +64,15 @@
 		93D392952C94DC7415B055BD /* SwiftTest */ = {
 			isa = PBXGroup;
 			children = (
+				DAE0BA96207A559A0093EDDD /* ViewConfiguration.h */,
+				DAE0BA97207A559B0093EDDD /* ViewConfiguration.m */,
 				93D39024C4E198A927315945 /* Info.plist */,
 				93D39EFB4EC98D4CD693E6FC /* Assets.xcassets */,
 				93D39143C5C1ED83AC45EC88 /* LaunchScreen.storyboard */,
 				93D39736D88AD08896E7FABB /* AppDelegate.swift */,
 				93D390A7C104148EB38F307C /* Main.storyboard */,
 				93D39EEBC1EB7B548A3AABA2 /* ViewController.swift */,
+				DAE0BA95207A559A0093EDDD /* SwiftTest-Bridging-Header.h */,
 			);
 			path = SwiftTest;
 			sourceTree = "<group>";
@@ -116,6 +123,11 @@
 			isa = PBXProject;
 			attributes = {
 				ORGANIZATIONNAME = Lyndir;
+				TargetAttributes = {
+					93D3914338053096E2196425 = {
+						LastSwiftMigration = 0930;
+					};
+				};
 			};
 			buildConfigurationList = 93D39EC61661894B408B5B2B /* Build configuration list for PBXProject "SwiftTest" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -175,6 +187,7 @@
 			files = (
 				93D39C248F2174A83ECA22B6 /* AppDelegate.swift in Sources */,
 				93D396C817B4F5ECFC6A5AF8 /* ViewController.swift in Sources */,
+				DAE0BA98207A559B0093EDDD /* ViewConfiguration.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,8 +321,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -319,10 +331,12 @@
 			baseConfigurationReference = 8C80D06351C76A784284184C /* Pods-SwiftTest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = SwiftTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lyndir.SwiftTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SwiftTest/SwiftTest-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -333,10 +347,13 @@
 			baseConfigurationReference = 2E5C542BB0D69F92268C0EC8 /* Pods-SwiftTest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = SwiftTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lyndir.SwiftTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SwiftTest/SwiftTest-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -352,6 +369,7 @@
 				93D39A6D1393EE67A82A6458 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		93D39EC61661894B408B5B2B /* Build configuration list for PBXProject "SwiftTest" */ = {
 			isa = XCConfigurationList;
